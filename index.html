@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+<meta name="description" content="TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification. A harmonized TCGA benchmark of BINN, GraphPath, and PATH over Reactome/ssGSEA pathway activity for multi-task treatment-assignment and short-term survival prediction across 2,622 patients and five solid-tumour cohorts.">
+<meta property="og:title" content="TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification"/>
+<meta property="og:description" content="Once three pathway-informed architectures are evaluated on identical folds with matched uncertainty quantification, most inter-model differences fall inside their 95% confidence intervals."/>
+<meta property="og:image" content="static/images/overview.png" />
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta name="twitter:title" content="TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification">
+<meta name="twitter:description" content="A harmonized benchmark for pathway-guided prediction of treatment assignment and short-term survival across five TCGA cohorts.">
+<meta name="twitter:image" content="static/images/overview.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- TODO: once this page is deployed, add <link rel="canonical">, og:url, and
+     citation_pdf_url / citation_abstract_html_url with the live absolute URLs. -->
+
+<!-- Google Scholar / citation metadata -->
+<meta name="citation_title" content="TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification">
+<meta name="citation_author" content="Banik, Sujoy">
+<meta name="citation_author" content="Chakraborty, Sayantan">
+<meta name="citation_author" content="Das Toma, Boishakhi">
+<meta name="citation_author" content="Ghafoor, Zainab">
+<meta name="citation_author" content="Bhattacharjee, Ushashi">
+<meta name="citation_author" content="Howlader, Koushik">
+<meta name="citation_author" content="Roy, Tirtho">
+<meta name="citation_publication_date" content="2026">
+  <title>TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification</title>
+  <link rel="icon" type="image/x-icon" href="static/images/overview.png">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification</h1>
+            <div class="is-size-5 publication-authors">
+              <div class="author-list">
+                <span class="author-block">Sujoy Banik<sup>1</sup>,</span>
+                <span class="author-block">Sayantan Chakraborty<sup>2</sup>,</span>
+                <span class="author-block">Boishakhi Das Toma<sup>3</sup>,</span>
+                <span class="author-block">Zainab Ghafoor<sup>4</sup>,</span>
+                <span class="author-block">Ushashi Bhattacharjee<sup>5</sup>,</span>
+                <span class="author-block">
+                  <a href="https://www.cs.iastate.edu/people/koushik-howlader" target="_blank">Koushik Howlader</a><sup>5</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/tirtho-roy-apon/" target="_blank"><b>Tirtho Roy</b></a><sup style="color:#1f77b4;">5,&dagger;</sup>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <p><sup>1</sup> Rajshahi University of Engineering &amp; Technology, Bangladesh</p>
+                <p><sup>2</sup> University of Dhaka, Bangladesh</p>
+                <p><sup>3</sup> American International University-Bangladesh, Bangladesh</p>
+                <p><sup>4</sup> Sonoma State University, USA</p>
+                <p><sup>5</sup> Iowa State University, USA</p>
+                <p><i><sup style="color:#1f77b4;">&dagger;</sup>Corresponding author: <a href="mailto:tirtho@iastate.edu">tirtho@iastate.edu</a></i></p>
+                <p class="venue-accepted"><span class="tag-accepted">Under Review</span> Manuscript under review &mdash; not yet accepted or published</p>
+              </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                      <!-- Paper PDF -->
+ <span class="link-block">
+  <a href="static/paper/paper.pdf"
+     target="_blank"
+     class="external-link button is-normal is-rounded is-dark">
+    <span class="icon">
+      <i class="fas fa-file-pdf"></i>
+    </span>
+    <span>Paper</span>
+  </a>
+</span>
+
+      <!-- Code -->
+      <!-- TODO: point href at the code repository once it is public -->
+      <span class="link-block">
+          <a href="#" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code (soon)</span>
+          </a>
+      </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Teaser image -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+       <h2 class="title is-3 has-text-centered">The TRAPS benchmark</h2>
+      <img src="static/images/overview.png" alt="TRAPS workflow: TCGA gene expression is mapped through Reactome into ssGSEA pathway activity scores, then fed to BINN, GraphPath, and PATH, which each emit three clinical predictions and pathway importance rankings">
+      <h2 class="subtitle has-text-centered">
+      TCGA gene expression and clinical records are converted into <b>Reactome pathway activity scores</b> via ssGSEA, giving every patient the same 1,706-dimensional input. Three biologically informed architectures &mdash; <b>BINN</b> (sparse Reactome hierarchy), <b>GraphPath</b> (multi-head graph attention), and <b>PATH</b> (edge-aware graph transformer) &mdash; are then trained jointly on three binary clinical heads: targeted molecular therapy (TMT), radiation therapy (RT), and overall survival beyond 180 days (OS&nbsp;&ge;&nbsp;6&nbsp;m). Shared representation, shared objective, byte-identical folds.
+      </h2>
+    </div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+
+<!-- Abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Cancer treatment planning requires decisions across multiple clinical dimensions at once. Clinicians must determine whether a patient should receive targeted molecular therapy, radiation therapy, and whether they are likely to survive beyond six months. Existing pathway-informed deep learning models have been developed and tested in isolation, so it is unclear how they compare on a common footing. We present a harmonized benchmark for pathway-guided prediction of treatment assignment and short-term survival, evaluating three biologically informed architectures &mdash; BINN, GraphPath, and PATH &mdash; across five cancer cohorts drawn from The Cancer Genome Atlas, representing <b>2,622 patients</b> encoded using Reactome pathway activity scores. We emphasise that the labels reflect the treatment a patient was recorded as receiving in TCGA, i.e. <i>treatment exposure</i>, rather than a measured response to therapy. Each model is trained jointly on all three clinical outcomes over a shared Reactome pathway representation, with each architecture retaining its original reference training protocol; to our knowledge this is the first study to treat pathway-structured deep learning as a combined treatment-assignment and short-term survival prediction problem. Our results show that, once every architecture is evaluated on identical stratified folds with matched uncertainty quantification (five repeated splits and paired-bootstrap tests), <b>most inter-model differences fall within their 95% confidence intervals</b>: the architecture rankings reported when these models are studied in isolation are largely not statistically resolved. The one consistent and significant effect is that the sparse-hierarchy model BINN is the strongest survival (OS) predictor, significantly outperforming both graph models on breast-cancer OS (&Delta;AUROC up to 0.14, <i>p</i>&nbsp;&le;&nbsp;0.01) and leading on lung and prostate OS. For treatment-assignment prediction, targeted molecular therapy is best discriminated in the prostate cohort (AUROC &asymp; 0.80 for all three models), yet no architecture significantly outperforms the others on any TMT cohort; radiation-therapy assignment is weakly predicted throughout, consistent with the hypothesis that its drivers are largely clinical rather than transcriptomic. Under a fair unified protocol, then, the choice among pathway-informed architectures matters far less than prior isolated results suggest, with short-term survival prediction the clearest point of differentiation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Abstract -->
+
+
+<!-- Guiding question -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Why a harmonized benchmark?</h2>
+        <div class="content has-text-justified">
+          <p>
+            Pathway-informed models have each been shown to work &mdash; but never against each other. P-NET, BINN, GraphPath, and PATH were developed and evaluated under different datasets, labels, input features, and endpoints. So it is genuinely unknown whether one architecture is generally better, or whether each simply happens to suit the setting it was published in.
+          </p>
+          <p>
+            TRAPS removes that confound. Every model sees the same patients, the same Reactome/ssGSEA representation, the same multi-label objective, and &mdash; at each of five seeds &mdash; byte-identical 80/10/10 stratified folds. Every reported gap then carries a 95% confidence interval and a paired-bootstrap test. The question stops being <i>"which model scored highest?"</i> and becomes <i>"which differences survive repeated evaluation?"</i>
+          </p>
+          <p>
+            One honest caveat, stated in the paper and repeated here: each architecture keeps its original reference training protocol, including its optimiser, hyperparameters, and &mdash; for PATH &mdash; its own gene-membership pathway filter. The benchmark is harmonized at the level of <i>data, representation, and evaluation splits</i>, not a fully controlled head-to-head comparison.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Guiding question -->
+
+
+<!-- Contributions -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Contributions</h2>
+        <div class="content has-text-left">
+          <ol>
+            <li><b>A harmonized TCGA benchmark</b> &mdash; pathway-based prediction of TMT, RT, and OS&nbsp;&ge;&nbsp;6&nbsp;m across five solid-tumour cohorts, sharing a common input representation and learning objective across architectures.</li>
+            <li><b>One representation for every patient</b> &mdash; the same Reactome and ssGSEA-based pathway encoding, making the input space consistent across cohorts and models.</li>
+            <li><b>Three pathway-informed architectures, adapted and compared</b> &mdash; BINN's sparse Reactome hierarchy, GraphPath's multi-head graph attention, and PATH's edge-aware graph transformer, each trained multi-task on all three heads.</li>
+            <li><b>Performance is phenotype-specific</b> &mdash; the strongest architecture changes depending on whether the target is therapy assignment or short-term survival, and most cross-model gaps do not survive paired bootstrapping at all.</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Contributions -->
+
+
+<!-- Cohorts -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Five cohorts, three heads, 2,622 patients</h2>
+      <div class="columns is-centered">
+        <div class="column is-four-fifths">
+          <div class="table-container">
+            <table class="table is-fullwidth is-narrow is-hoverable" style="font-size: 0.85rem;">
+              <thead>
+                <tr>
+                  <th>Cancer type</th>
+                  <th class="has-text-right"><i>n</i></th>
+                  <th class="has-text-right">TMT <i>n</i>&nbsp;(%)</th>
+                  <th class="has-text-right">RT <i>n</i>&nbsp;(%)</th>
+                  <th class="has-text-right">OS&nbsp;&ge;&nbsp;6&nbsp;m <i>n</i>&nbsp;(%)</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Breast</td><td class="has-text-right">618</td><td class="has-text-right">571 (92%)</td><td class="has-text-right">345 (56%)</td><td class="has-text-right">462 (75%)</td></tr>
+                <tr><td>Prostate</td><td class="has-text-right">496</td><td class="has-text-right">54 (11%)</td><td class="has-text-right">61 (12%)</td><td class="has-text-right">480 (97%)</td></tr>
+                <tr><td>Head &amp; Neck</td><td class="has-text-right">429</td><td class="has-text-right">150 (35%)</td><td class="has-text-right">274 (64%)</td><td class="has-text-right">395 (92%)</td></tr>
+                <tr><td>Thyroid</td><td class="has-text-right">109</td><td class="has-text-right">7 (6%)</td><td class="has-text-right">61 (56%)</td><td class="has-text-right">108 (99%)</td></tr>
+                <tr><td>Lung</td><td class="has-text-right">970</td><td class="has-text-right">311 (32%)</td><td class="has-text-right">124 (13%)</td><td class="has-text-right">863 (89%)</td></tr>
+                <tr class="has-background-white-ter">
+                  <td><b>Total</b></td><td class="has-text-right"><b>2,622</b></td>
+                  <td class="has-text-right"><b>1,093 (42%)</b></td>
+                  <td class="has-text-right"><b>865 (33%)</b></td>
+                  <td class="has-text-right"><b>2,308 (88%)</b></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="description has-text-centered">
+            Per-cohort sample counts and positive prevalence for each clinical head. Gene expression is aggregated into <b>1,706 curated Reactome pathways</b> (10&ndash;1,000 genes each), scored per sample with ssGSEA and normalised to [0,&nbsp;1]. TMT&nbsp;=&nbsp;targeted molecular therapy; RT&nbsp;=&nbsp;radiation therapy; OS&nbsp;=&nbsp;overall survival. Note the severe class imbalance in several cells &mdash; thyroid TMT rests on 7 positives, and thyroid OS on a single negative patient.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Cohorts -->
+
+
+<!-- Main results table -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Main results: AUROC with confidence intervals</h2>
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <div class="table-container">
+            <table class="table is-fullwidth is-narrow is-hoverable" style="font-size: 0.82rem;">
+              <thead>
+                <tr>
+                  <th>Cohort</th><th>Head</th>
+                  <th class="has-text-centered">BINN</th>
+                  <th class="has-text-centered">GraphPath</th>
+                  <th class="has-text-centered">PATH</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td rowspan="3">Breast</td><td>TMT</td><td class="has-text-centered">0.52 [0.40, 0.65]</td><td class="has-text-centered">0.57 [0.52, 0.63]</td><td class="has-text-centered">0.50 [0.43, 0.57]</td></tr>
+                <tr><td>RT</td><td class="has-text-centered">0.53 [0.47, 0.59]</td><td class="has-text-centered">0.58 [0.47, 0.69]</td><td class="has-text-centered">0.51 [0.41, 0.62]</td></tr>
+                <tr class="has-background-white-bis"><td>OS</td><td class="has-text-centered"><b>0.66 [0.60, 0.72]</b></td><td class="has-text-centered">0.56 [0.50, 0.61]</td><td class="has-text-centered">0.53 [0.49, 0.58]</td></tr>
+
+                <tr><td rowspan="3">Lung</td><td>TMT</td><td class="has-text-centered">0.54 [0.53, 0.56]</td><td class="has-text-centered">0.49 [0.47, 0.51]</td><td class="has-text-centered">0.48 [0.43, 0.54]</td></tr>
+                <tr><td>RT</td><td class="has-text-centered">0.55 [0.47, 0.63]</td><td class="has-text-centered">0.50 [0.49, 0.52]</td><td class="has-text-centered">0.54 [0.47, 0.61]</td></tr>
+                <tr><td>OS</td><td class="has-text-centered"><b>0.57 [0.51, 0.62]</b></td><td class="has-text-centered">0.49 [0.44, 0.55]</td><td class="has-text-centered">0.52 [0.47, 0.58]</td></tr>
+
+                <tr><td rowspan="3">Prostate</td><td>TMT</td><td class="has-text-centered">0.80 [0.70, 0.90]</td><td class="has-text-centered">0.79 [0.70, 0.88]</td><td class="has-text-centered">0.82 [0.72, 0.92]</td></tr>
+                <tr><td>RT</td><td class="has-text-centered">0.69 [0.50, 0.88]</td><td class="has-text-centered">0.62 [0.42, 0.82]</td><td class="has-text-centered">0.66 [0.53, 0.79]</td></tr>
+                <tr><td>OS</td><td class="has-text-centered"><b>0.73 [0.63, 0.82]</b></td><td class="has-text-centered">0.66 [0.53, 0.78]</td><td class="has-text-centered">0.45 [0.27, 0.63]</td></tr>
+
+                <tr><td rowspan="3">Head &amp; Neck</td><td>TMT</td><td class="has-text-centered">0.62 [0.55, 0.70]</td><td class="has-text-centered">0.58 [0.53, 0.63]</td><td class="has-text-centered">0.57 [0.49, 0.66]</td></tr>
+                <tr class="has-background-white-bis"><td>RT</td><td class="has-text-centered"><b>0.63 [0.58, 0.69]</b></td><td class="has-text-centered">0.56 [0.49, 0.63]</td><td class="has-text-centered">0.53 [0.46, 0.60]</td></tr>
+                <tr><td>OS</td><td class="has-text-centered">0.70 [0.61, 0.78]</td><td class="has-text-centered">0.67 [0.49, 0.86]</td><td class="has-text-centered">0.70 [0.50, 0.91]</td></tr>
+
+                <tr><td rowspan="3">Thyroid</td><td>TMT</td><td class="has-text-centered">0.64 [0.24, 1.04]</td><td class="has-text-centered">0.71 [0.50, 0.93]</td><td class="has-text-centered">0.76 [0.48, 1.04]</td></tr>
+                <tr><td>RT</td><td class="has-text-centered">0.31 [0.12, 0.51]</td><td class="has-text-centered">0.37 [0.13, 0.60]</td><td class="has-text-centered">0.34 [0.23, 0.45]</td></tr>
+                <tr><td>OS<sup>&dagger;</sup></td><td class="has-text-centered">0.20</td><td class="has-text-centered">0.10</td><td class="has-text-centered">0.30</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="description has-text-centered">
+            Held-out test AUROC (mean&nbsp;[95% CI] over five identical-split repeats). At a fixed repeat, all three models are evaluated on byte-identical 80/10/10 stratified folds. <b>Bold</b> marks the two cells where a paired-bootstrap test resolves the difference as significant: BINN over both graph models on <b>breast OS</b> (&Delta;AUROC 0.10, <i>p</i>&nbsp;=&nbsp;0.010 vs. GraphPath; 0.14, <i>p</i>&nbsp;=&nbsp;0.001 vs. PATH) and BINN over GraphPath on <b>head&nbsp;&amp;&nbsp;neck RT</b> (&Delta;AUROC 0.06, <i>p</i>&nbsp;=&nbsp;0.013); BINN also leads lung and prostate OS. <sup>&dagger;</sup>Thyroid OS is degenerate &mdash; the cohort contains a single OS-negative patient &mdash; and its estimates are flagged as underpowered rather than interpretable. Everywhere else, the confidence intervals overlap.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Main results table -->
+
+
+<!-- Bar chart -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">No architecture dominates</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-image">
+            <img src="static/images/fig.png" alt="Grouped bar chart of test AUROC for BINN, GraphPath, and PATH across three clinical heads and five cohorts, with 95% confidence intervals and a dashed chance line at 0.50" style="width: 92%; height: auto;">
+          </div>
+          <p class="description">
+            Test AUROC across cohorts and clinical heads, averaged over five identical-split repeats, with 95% CIs. Colours follow the colourblind-safe Okabe&ndash;Ito palette: BINN blue, GraphPath orange, PATH green; the dashed line marks chance (0.50). Hatched bars (&dagger;) are single-split or underpowered cells that lack a reliable CI. Three heads &times; five cohorts &times; three models makes the headline finding immediate: <b>no single architecture dominates uniformly</b>, and many head-to-head gaps have intervals that include zero.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Bar chart -->
+
+
+<!-- Heatmap -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">The cohort matters more than the model</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-image">
+            <img src="static/images/fig2.png" alt="Heatmap of mean test AUROC per model-cohort cell for each clinical head, with every cell annotated with its numeric value" style="width: 100%; height: auto;">
+          </div>
+          <p class="description">
+            Mean test AUROC per (model, cohort) cell for each clinical head, on a perceptually uniform colourblind-safe sequential map; darker is higher and the colourbar marks chance (0.50). Every cell is annotated so colour is never the sole channel. Read across the rows rather than down them: on TMT, discrimination is driven overwhelmingly by <i>which cohort</i> &mdash; all three models reach AUROC&nbsp;&asymp;&nbsp;0.80 on prostate, the most targetable-driver-defined cohort, while collapsing toward chance on breast and lung. <b>None of the inter-model TMT contrasts is significant in any cohort.</b>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Heatmap -->
+
+
+<!-- Reliability -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Where the errors actually are</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-image">
+            <img src="static/images/fig3.png" alt="Confusion-matrix counts for BINN, GraphPath, and PATH on the breast test fold at the 0.5 decision threshold, for each clinical head" style="width: 88%; height: auto;">
+          </div>
+          <p class="description">
+            Confusion-matrix counts on the breast test fold at the 0.5 threshold, computed on identical held-out folds for all three models. On the TMT head every model recovers essentially every positive case (FN&nbsp;=&nbsp;0; TP&nbsp;=&nbsp;50 of 50), so recall is saturated &mdash; pathway-level features do capture targetable molecular drivers. The difficulty lies entirely in the small negative subgroup: with only 12 TMT-negatives in the fold, BINN and GraphPath assign every patient to the positive class. High AUROC in an imbalanced cell is not the same as a clinically usable decision rule.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Reliability -->
+
+
+<!-- Pathway importance -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3 has-text-centered">Do the models agree on the biology?</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-image">
+            <img src="static/images/fig5.png" alt="Normalised pathway importance scores for BINN and GraphPath across the TMT, RT, and OS heads on the breast cohort, with arrows flagging large between-model differences" style="width: 100%; height: auto;">
+          </div>
+          <p class="description">
+            Normalised pathway importance for BINN (gradient&nbsp;&times;&nbsp;input attribution) and GraphPath (attention-derived importance) across the three clinical heads, breast cohort. PATH is absent because it produces no pathway-level importance scores. Arrows flag pathways differing by &gt;&nbsp;0.50 &mdash; a heuristic for manual review, <i>not</i> a significance threshold. The strongest convergent signal is <b>ERK/MAPK Targets</b>, ranked highly by both models across multiple cohorts and all three heads; RT additionally converges on <b>Receptor-Mediated Mitophagy</b> and <b>VEGFR2-Mediated Vascular Permeability</b>. That two fundamentally different attribution mechanisms agree is what makes the signal interesting &mdash; but these remain literature-supported hypotheses, not validated findings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Pathway importance -->
+
+
+<!-- Takeaway -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">What survives repeated evaluation</h2>
+        <div class="content has-text-justified">
+          <p>
+            <b>Survival is where architecture matters.</b> BINN is the most consistent OS predictor and the only model whose advantage is statistically resolved &mdash; plausibly because its multi-depth auxiliary supervision propagates loss through every layer of the Reactome hierarchy, reinforcing broad transcriptional survival signals distributed across pathway levels.
+          </p>
+          <p>
+            <b>Therapy assignment is not.</b> No architecture significantly outperforms the others on any TMT cohort. RT is weakly predicted throughout &mdash; consistent with, though not proof of, the hypothesis that radiation-assignment drivers are largely clinical rather than transcriptomic.
+          </p>
+          <p>
+            <b>Single splits mislead.</b> GraphPath's headline "0.92 prostate TMT" from isolated evaluation becomes <b>0.79&nbsp;[0.70,&nbsp;0.88]</b> across five identical-fold repeats &mdash; statistically indistinguishable from BINN (0.80) and PATH (0.82). Likewise, a perfect thyroid OS-F1 does not survive repeated evaluation. These are exactly the split-dependent artefacts a repeated-split protocol is built to expose.
+          </p>
+          <p>
+            The contribution here is less any single winner than the protocol: a shared data, preprocessing, training, and evaluation setup under which pathway-based models can be compared on equal terms, with confidence intervals and paired-bootstrap tests deciding which differences are real.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Takeaway -->
+
+
+<!-- Limitations -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Limitations</h2>
+        <div class="content has-text-left">
+          <ul>
+            <li><b>Exposure, not response.</b> Labels record the treatment a patient was documented as receiving in TCGA, not a measured response to therapy. Validation on true response endpoints is still needed.</li>
+            <li><b>Thin cells.</b> Thyroid TMT rests on 7 positives; prostate and thyroid OS are severely imbalanced. Uncertainty stays substantial despite repeated stratified splits and paired bootstrapping.</li>
+            <li><b>Protocol scope.</b> Repeated random splits rather than full <i>k</i>-fold cross-validation, and no external validation cohort.</li>
+            <li><b>Fixed-horizon survival.</b> OS is a binary 180-day outcome; censoring and time-to-event dynamics are not modelled.</li>
+            <li><b>Unequal pathway coverage.</b> PATH's gene-membership filter admits 1,431 of the 1,706 shared Reactome pathways, leaving out 275 with fewer than 15 genes &mdash; including 7 of the 23 pathways surfaced by the importance analysis. A shared minimum-gene threshold would standardise this.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Limitations -->
+
+
+<!--BibTeX -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p><i>Status: manuscript under review &mdash; not yet accepted or published. This entry is a placeholder; update it once a venue or preprint identifier is assigned.</i></p>
+      <pre><code>@misc{banik2026traps,
+  title  = {TRAPS: Treatment-Assignment Prediction via Pathway-informed Stratification},
+  author = {Banik, Sujoy and Chakraborty, Sayantan and Das Toma, Boishakhi and
+            Ghafoor, Zainab and Bhattacharjee, Ushashi and Howlader, Koushik and
+            Roy, Tirtho},
+  year   = {2026},
+  note   = {Manuscript under review}
+}</code></pre>
+  </div>
+</section>
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  </body>
+  </html>
